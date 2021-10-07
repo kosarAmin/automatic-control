@@ -1,0 +1,34 @@
+%% Session One write Program to Find the Roots of a Quadratic Equation
+
+function [x]=findroot(a,b,c)
+syms x
+eq=a*x^2+b*x+c==0;
+x=solve(eq,x);
+delta=b^2-4*a*c;
+if (delta==0)
+    disp('real and equal roots')
+else
+    if(delta>0)
+        disp('for real and different roots')
+    else
+        disp('roots are not real')
+    end
+end
+
+
+
+%% another avenue by Arezoo Qhadiri
+function eq2()
+   a=input('Enter a as (a*x^2+b*x+c)=');
+   b=input('Enter b as (a*x^2+b*x+c)=');
+   c=input('Enter c as (a*x^2+b*x+c)=');
+   delta=(b^2)-(4*a*c);
+   if delta==0
+       disp('x='),disp(-b/2*a)
+   elseif delta>0
+      disp('x1='),disp((-b+sqrt(delta))/2*a) 
+      disp('x2='),disp((-b-sqrt(delta))/2*a)
+   elseif delta<0
+       disp('x1='),disp((-b/2*a)+i*sqrt(-b^2+4*a*c)/2*a)
+       disp('x2='),disp((-b/2*a)-i*sqrt(-b^2+4*a*c)/2*a)
+   end
