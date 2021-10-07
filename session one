@@ -1,4 +1,4 @@
-%% Session One write Program to Find the Roots of a Quadratic Equation
+%% Session one write Program to Find the Roots of a Quadratic Equation
 
 function [x]=findroot(a,b,c)
 syms x
