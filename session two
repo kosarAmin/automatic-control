@@ -1,0 +1,34 @@
+%% input requirement
+v0 = input('   enter initial velocity           ');
+teta0 = input('   enter the initial angle in degree      ');
+%% calculate 
+g=9.81;
+teta0=deg2rad(teta0);
+t_max=2*v0/g*sin(teta0);
+x_max=2*(v0).^2/g*sin(teta0)*cos(teta0);
+disp('maximum t :')
+disp(t_max)
+disp('maximum x :')
+disp(x_max)
+
+%% plot
+syms t teta
+X=v0*t*cos(teta);
+n=10;
+t=linspace(0,t_max,n);
+
+teta=linspace(0,pi/2,n);
+VX=v0*cos(deg2rad(teta));
+
+
+for i = 1:n
+X(i)=v0*t(i)*cos(teta0);
+Y(i)=v0*t(i)*sin(teta0) - g/2*t(i).^2 ;
+end
+
+teta=linspace(0,90,n);
+figure;
+subplot(2,1,1);
+plot(X,Y);
+subplot(2,1,2);
+plot(teta,VX);
